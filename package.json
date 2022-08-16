@@ -1,6 +1,6 @@
 {
-  "name": "ngx-time-scheduler",
-  "version": "1.7.1",
+  "name": "@croshyyyy/ngx-time-scheduler-mes-software",
+  "version": "1.7.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,7 +22,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^9.1.11",
     "@angular/cdk": "^9.2.4",
@@ -62,5 +62,17 @@
     "ts-node": "~8.10.2",
     "tslint": "~5.15.0",
     "typescript": "~3.8.3"
-  }
+  },
+  "description": "[![GitHub issues](https://img.shields.io/github/issues/abhishekjain12/ngx-time-scheduler.svg)](https://github.com/abhishekjain12/ngx-time-scheduler/issues) [![GitHub forks](https://img.shields.io/github/forks/abhishekjain12/ngx-time-scheduler.svg)](https://github.com/abhishekjain12/ngx-time-scheduler/network) [![GitHub stars](https://img.shields.io/github/stars/abhishekjain12/ngx-time-scheduler.svg)](https://github.com/abhishekjain12/ngx-time-scheduler/stargazers) [![GitHub license](https://img.shields.io/github/license/abhishekjain12/ngx-time-scheduler.svg)](https://github.com/abhishekjain12/ngx-time-scheduler/blob/master/LICENSE) [![latest](https://img.shields.io/npm/v/ngx-time-scheduler/latest.svg)](http://www.npmjs.com/package/ngx-time-scheduler)  [![npm](https://img.shields.io/npm/dt/ngx-time-scheduler.svg)](https://www.npmjs.com/packagengx-time-scheduler)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elp4nsho/ngx-time-scheduler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elp4nsho/ngx-time-scheduler/issues"
+  },
+  "homepage": "https://github.com/elp4nsho/ngx-time-scheduler#readme"
 }

@@ -51,7 +51,7 @@
     <div class="time-sch-content-wrap">
       <table class="time-sch-table">
         <tr *ngFor="let sectionItem of sectionItems; trackBy: trackByFn"
-            [style.height]="sectionItem.minRowHeight + 'px'">
+            [style.height]="minRowHeight+ 'px'">
           <td class="time-sch-section text-center" #sectionTd
               (click)="events.SectionClickEvent ? events.SectionClickEvent(sectionItem.section) : false"
               (contextmenu)="events.SectionContextMenuEvent ? events.SectionContextMenuEvent(sectionItem.section, $event) : false"
@@ -67,6 +67,10 @@
 
       <div class="time-sch-section-wrapper" [style.left]="SectionLeftMeasure" cdkDropListGroup>
         <div class="time-sch-section-container"
+             *ngFor="let sectionItem of sectionItems; trackBy: trackByFn"
+             [style.height]="minRowHeight+ 'px'"
+        >
+          <!--     <div class="time-sch-section-container"
              cdkDropList
              cdkDropListSortingDisabled
              [cdkDropListData]="sectionItem.section"
@@ -74,9 +78,24 @@
              *ngFor="let sectionItem of sectionItems; trackBy: trackByFn"
              [style.height]="sectionItem.minRowHeight + 'px'"
         >
+          -->
           <div class="time-sch-item"
                cdkDrag
-               cdkDragLockAxis="xy"
+               cdkDragLockAxis="x"
+               cdkDragBoundary=".time-sch-section-wrapper"
+               [cdkDragData]="itemMeta.item"
+               [cdkDragDisabled]="!allowDragging"
+               *ngFor="let itemMeta of sectionItem.itemMetas"
+               [ngClass]="itemMeta.item.classes"
+               (click)="events.ItemClicked ? events.ItemClicked(itemMeta.item) : false"
+               (contextmenu)="events.ItemContextMenu ? events.ItemContextMenu(itemMeta.item, $event) : false"
+               [style.height]="minRowHeight + 'px'"
+               [style.top]="0+ 'px'"
+               [style.left]="itemMeta.cssLeft + '%'"
+               [style.width]="itemMeta.cssWidth + '%'"
+          ><!--  <div class="time-sch-item"
+               cdkDrag
+               cdkDragLockAxis="x"
                cdkDragBoundary=".time-sch-section-wrapper"
                [cdkDragData]="itemMeta.item"
                [cdkDragDisabled]="!allowDragging"
@@ -88,7 +107,7 @@
                [style.top]="itemMeta.cssTop + 'px'"
                [style.left]="itemMeta.cssLeft + '%'"
                [style.width]="itemMeta.cssWidth + '%'"
-          >
+          >-->
             <div class="item-drag-placeholder"
                  *cdkDragPlaceholder
                  [style.height]="(minRowHeight - 6) + 'px'"
@@ -96,9 +115,18 @@
                  [style.width]="'calc('+ itemMeta.cssWidth + '% - 6px)'"
             ></div>
             <div class="time-sch-item-start" *ngIf="itemMeta.isStart"></div>
-            <div class="time-sch-item-content"
-                 [title]="itemMeta.item.tooltip? itemMeta.item.tooltip : ''">
-              {{itemMeta.item.name}}
+            <div style="display:flex">
+              <div class="time-sch-item-content"
+                   [title]="itemMeta.item.tooltip? itemMeta.item.tooltip : ''">
+                <p style="padding:0; margin:0;font-weight: bold">
+                  <em>
+                    {{itemMeta.item.nameLabel}}
+                  </em>
+                </p>
+                <p style="padding:0; margin:0">
+                  {{itemMeta.item.name}}
+                </p>
+              </div>
             </div>
             <div class="time-sch-item-end" *ngIf="itemMeta.isEnd"></div>
           </div>

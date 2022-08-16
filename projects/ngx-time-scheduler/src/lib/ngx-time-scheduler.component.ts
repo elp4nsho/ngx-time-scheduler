@@ -37,7 +37,7 @@ export class NgxTimeSchedulerComponent implements OnInit, OnDestroy {
   @Input() locale = '';
   @Input() showBusinessDayOnly = false;
   @Input() headerFormat = 'Do MMM YYYY';
-  @Input() minRowHeight = 40;
+  @Input() minRowHeight = 80;
   @Input() maxHeight: string = null;
   @Input() text = new Text();
   @Input() items: Item[];

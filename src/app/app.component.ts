@@ -90,7 +90,8 @@ export class AppComponent implements OnInit {
     this.items = [{
       id: 1,
       sectionID: 1,
-      name: 'Item 1',
+      nameLabel: 'OT',
+      name: 'Item 1Item 1Item 1Item 1Item 1Item 1Item 1',
       start: moment().startOf('day'),
       end: moment().add(5, 'days').endOf('day'),
       classes: ''
@@ -111,9 +112,9 @@ export class AppComponent implements OnInit {
     }, {
       id: 4,
       sectionID: 3,
-      name: 'Item 4',
+      name: 'Item 4Item 4Item 4',
       start: moment().add(1, 'days').startOf('day'),
-      end: moment().add(3, 'days').endOf('day'),
+      end: moment().add(1, 'days').endOf('day'),
       classes: ''
     }, {
       id: 5,

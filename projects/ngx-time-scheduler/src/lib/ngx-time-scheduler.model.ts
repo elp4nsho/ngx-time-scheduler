@@ -13,6 +13,7 @@ export class Period {
 export class Item {
   id: number;
   name: string;
+  nameLabel?: string;
   start: moment.Moment;
   end: moment.Moment;
   classes: string;

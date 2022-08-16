@@ -41,6 +41,7 @@
 
 .time-sch-wrapper {
   overflow: auto;
+
 }
 
 .time-sch-wrapper, .time-sch-header-wrapper, .time-sch-table-wrapper {
@@ -99,6 +100,7 @@
 
 .time-sch-section-container {
   position: relative;
+  display: flex;
   overflow: hidden;
 }
 
@@ -118,7 +120,6 @@
 
 .time-sch-item-content {
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
   z-index: 1;
   padding: 4px 0 4px 6px;
